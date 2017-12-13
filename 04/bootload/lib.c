@@ -129,10 +129,3 @@ int putxval(unsigned long value, int column)
   puts(p + 1);
   return 0;
 }
-
-int func(int a, int b)
-{
-  volatile int c;
-  c = a + b;
-  return c;
-}
