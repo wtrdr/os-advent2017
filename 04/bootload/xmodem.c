@@ -32,25 +32,25 @@ static int xmodem_read_block(unsigned char block_number, char *buf)
   unsigned char c, block_num, check_sum;
   int i;
 
-  block_num = serial_is_recv_byte(SERIAL_DEFAULT_DEVICE);
+  block_num = serial_recv_byte(SERIAL_DEFAULT_DEVICE);
   if (block_num != block_number)
     return -1;
 
-  block_num ^= serial_is_recv_byte(SERIAL_DEFAULT_DEVICE);
+  block_num ^= serial_recv_byte(SERIAL_DEFAULT_DEVICE);
   if (block_num != 0xff)
     return -1;
 
   check_sum = 0;
   for (i = 0; i < XMODEM_BLOCK_SIZE; i++) {
     // 128バイトのデータを受信する
-    c = serial_is_recv_byte(SERIAL_DEFAULT_DEVICE);
+    c = serial_recv_byte(SERIAL_DEFAULT_DEVICE);
     *(buf++) = c;
     check_sum += c;
   }
 
-  check_sum ^= serial_is_recv_byte(SERIAL_DEFAULT_DEVICE);
+  check_sum ^= serial_recv_byte(SERIAL_DEFAULT_DEVICE);
   if (check_sum)
-    return -1
+    return -1;
 
   return i;
 }
@@ -85,7 +85,7 @@ long xmodem_recv(char *buf)
       }
     } else {
       if (receiving)
-        return -1
+        return -1;
     }
   }
 

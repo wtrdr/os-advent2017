@@ -50,6 +50,7 @@ int main(void)
   extern int buffer_start;
 
   init();
+  func(1, 2);
 
   puts("kzload (kozos boot loader) started.\n");
   while (1) {
@@ -73,6 +74,6 @@ int main(void)
     } else {
       puts("unknown.\n");
     }
-    return 0
   }
+  return 0;
 }
