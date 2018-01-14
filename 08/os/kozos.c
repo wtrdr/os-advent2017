@@ -71,3 +71,77 @@ static int putcurrent(void)
   readyque.tail = current;
   return 0;
 }
+
+static void thread_end(void)
+{
+  kz_exit();
+}
+
+static void thread_init(kz_thread *thp)
+{
+  thp->init.func(thp->init.argc, thp->init.argv);
+  thread_end();
+}
+
+static kz_thread_id_t thread_run(kz_func_t func, char *name,
+                                 int stacksize, int argc, char *argv[])
+{
+  int i;
+  kz_thread *thp;
+  uint32 *sp;
+  extern char userstack;
+  static char *thread_stack = &userstack;
+
+  for (i = 0; i < THREAD_NUM; i++) {
+    thp = &threads[i];
+    if (!thp->init.func)
+      break;
+  }
+  if (i == THREAD_NUM)
+    return -1;
+
+  memset(thp, 0, sizeof(*thp));
+
+  strcpy(thp->name, name);
+  thp->next = NULL;
+
+  thp->init.func = func;
+  thp->init.argc = argc;
+  thp->init.argv = argv;
+
+  memset(thread_stack, 0, stacksize);
+  thread_stack += stacksize;
+
+  thp->stack = thread_stack;
+
+  sp = (uint32 *)thp->stack;
+  *(--sp) = (uint32)thread_end;
+
+  *(--sp) = (uint32)thread_init;
+
+  *(--sp) = 0; /*ER6*/
+  *(--sp) = 0; /*ER5*/
+  *(--sp) = 0; /*ER4*/
+  *(--sp) = 0; /*ER3*/
+  *(--sp) = 0; /*ER2*/
+  *(--sp) = 0; /*ER1*/
+
+  *(--sp) = (uint32)thp; /*ER0*/
+
+  thp->context.sp = (uint32)sp;
+
+  putcurrent();
+
+  current=thp;
+  putcurrent();
+
+  return (kz_thread_id_t)current;
+}
+
+static int thread_exit(void)
+{
+  puts(current->name);
+  puts(" EXIT.\n");
+  memset(current, 0, sizeof(*current));
+  return 0;
+}
