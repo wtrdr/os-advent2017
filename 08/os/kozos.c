@@ -41,3 +41,33 @@ static kz_thread threads(THREAD_NUM);
 static kx_handler_t handlers(SOFTVEC_TYPE_NUM);
 
 void dispatch(kz_context *context);
+
+static int getcurrent(void)
+{
+  if (current == NULL) {
+    return -1;
+  }
+
+  readyque.head = current->next;
+  if (readyque.head == NULL) {
+    readyque.tail = NULL;
+  }
+  current->next = NULL;
+
+  return 0;
+}
+
+static int putcurrent(void)
+{
+  if (current == NULL) {
+    return -1;
+  }
+
+  if (readyque.tail) {
+    readyque.tail->next = current;
+  } else {
+    readyque.head = current;
+  }
+  readyque.tail = current;
+  return 0;
+}
