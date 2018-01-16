@@ -209,3 +209,34 @@ static void thread_intr(softvec_type_t type, unsigned long sp)
 
   dispatch(&current->context);
 }
+
+void kz_start(kz_func_t func, char *name, int stacksize,
+              int argc, char *argv[])
+{
+  current = NULL;
+
+  readyque.head = readyque.tail = NULL;
+  memset(threads,  0, sizeof(threads));
+  memset(handlers, 0, sizeof(handlers));
+
+  setintr(SOFTVEC_TYPE_SYSCALL, syscall_init);
+  setintr(SOFTVEC_TYPE_SOFTERR, softerr_intr);
+
+  current = (kz_thread *)thread_run(func, name, stacksize, argc, argv);
+
+  dispatch(&current->context);
+}
+
+void kz_sysdown(void)
+{
+  puts("system error!\n");
+  while(1)
+    ;
+}
+
+void kz_syscall(kz_syscall_type_t type, kz_syscall_param_t *param)
+{
+  current->syscall.type = type;
+  current->syscall.param = param;
+  asm volatile ("trapa #0");
+}
