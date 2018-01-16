@@ -163,7 +163,7 @@ static void call_functions(kz_syscall_type_t type, kz_syscall_param_t *p)
                                  p->un.run.stacksize,
                                  p->un.run.argc, p->un.run.argv);
       break;
-    case KZ_SYSCALL_TYPE_EXIST:
+    case KZ_SYSCALL_TYPE_EXIT:
       thread_exit();
       break;
     default:
