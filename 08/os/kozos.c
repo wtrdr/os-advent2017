@@ -14,7 +14,7 @@ typedef struct _kz_context {
 
 typedef struct _kz_thread {
   struct _kz_thread *next;
-  char name(THREAD_NAME_SIZE + 1);
+  char name[THREAD_NAME_SIZE + 1];
   char *stack;
 
   struct {
@@ -26,10 +26,11 @@ typedef struct _kz_thread {
   struct {
     kz_syscall_type_t type;
     kz_syscall_param_t *param;
-  } syscall
+  } syscall;
 
   kz_context context;
-} kx_thread;
+  char dummy[16]; 
+} kz_thread;
 
 static struct {
   kz_thread *head;
@@ -37,8 +38,8 @@ static struct {
 } readyque;
 
 static kz_thread *current;
-static kz_thread threads(THREAD_NUM);
-static kx_handler_t handlers(SOFTVEC_TYPE_NUM);
+static kz_thread threads[THREAD_NUM];
+static kz_handler_t handlers[SOFTVEC_TYPE_NUM];
 
 void dispatch(kz_context *context);
 
@@ -146,10 +147,10 @@ static int thread_exit(void)
   return 0;
 }
 
+static void thread_intr(softvec_type_t type, unsigned long sp);
+
 static int setintr(softvec_type_t type, kz_handler_t handler)
 {
-  static void thread_intr(softvec_type_t type, unsigned long sp);
-
   softvec_setintr(type, thread_intr);
   handlers[type] = handler;
   return 0;
