@@ -154,3 +154,58 @@ static int setintr(softvec_type_t type, kz_handler_t handler)
   handlers[type] = handler;
   return 0;
 }
+
+static void call_functions(kz_syscall_type_t type, kz_syscall_param_t *p)
+{
+  switch(type) {
+    case KZ_SYSCALL_TYPE_RUN:
+      p->un.run.ret = thread_run(p->un.run.func, p->un.run.name,
+                                 p->un.run.stacksize,
+                                 p->un.run.argc, p->un.run.argv);
+      break;
+    case KZ_SYSCALL_TYPE_EXIST:
+      thread_exit();
+      break;
+    default:
+      break;
+  }
+}
+
+static void syscall_proc(kz_syscall_type_t type, kz_syscall_param_t *p)
+{
+  getcurrent();
+  call_functions(type, p);
+}
+
+static void schedule(void)
+{
+  if (!readyque.head)
+    kz_sysdown();
+
+  current = readyque.head;
+}
+
+static void syscall_init(void)
+{
+  syscall_proc(current->syscall.type, current->syscall.param);
+}
+
+static void softerr_intr(void)
+{
+  puts(current->name);
+  puts(" DOWN.\n");
+  getcurrent();
+  thread_exit();
+}
+
+static void thread_intr(softvec_type_t type, unsigned long sp)
+{
+  current->context.sp = sp;
+
+  if(handlers[type])
+    handlers[type]();
+  
+  schedule();
+
+  dispatch(&current->context);
+}
