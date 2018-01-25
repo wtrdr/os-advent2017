@@ -60,7 +60,7 @@ static int getcurrent(void)
   if (readyque[current->priority].head == NULL) {
     readyque[current->priority].tail = NULL;
   }
-  current->flags &= -KZ_THREAD_FLAG_READY;
+  current->flags &= ~KZ_THREAD_FLAG_READY;
   current->next = NULL;
 
   return 0;
@@ -81,7 +81,7 @@ static int putcurrent(void)
     readyque[current->priority].head = current;
   }
   readyque[current->priority].tail = current;
-  current-> flags |= KZ_THREAD_FLAG_READY;
+  current->flags |= KZ_THREAD_FLAG_READY;
 
   return 0;
 }
@@ -216,6 +216,9 @@ static void call_functions(kz_syscall_type_t type, kz_syscall_param_t *p)
                                  p->un.run.priority, p->un.run.stacksize,
                                  p->un.run.argc, p->un.run.argv);
       break;
+    case KZ_SYSCALL_TYPE_EXIT:
+      thread_exit();
+      break;
     case KZ_SYSCALL_TYPE_WAIT:
       p->un.wait.ret = thread_wait();
       break;
@@ -230,9 +233,6 @@ static void call_functions(kz_syscall_type_t type, kz_syscall_param_t *p)
       break;
     case KZ_SYSCALL_TYPE_CHPRI:
       p->un.chpri.ret = thread_chpri(p->un.chpri.priority);
-      break;
-    case KZ_SYSCALL_TYPE_EXIT:
-      thread_exit();
       break;
     default:
       break;
