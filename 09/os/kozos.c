@@ -250,7 +250,7 @@ static void schedule(void)
   int i;
 
   for (i = 0; i < PRIORITY_NUM; i++) {
-    if (!readyque[i].head)
+    if (readyque[i].head)
       break;
   }
   if (i == PRIORITY_NUM)
