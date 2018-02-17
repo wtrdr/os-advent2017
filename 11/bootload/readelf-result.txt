@@ -1,0 +1,129 @@
+ELF ヘッダ:
+  マジック:  7f 45 4c 46 01 02 01 00 00 00 00 00 00 00 00 00 
+  クラス:                            ELF32
+  データ:                            2 の補数、ビッグエンディアン
+  バージョン:                        1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI バージョン:                    0
+  型:                                EXEC (実行可能ファイル)
+  マシン:                            Renesas H8/300
+  バージョン:                        0x1
+  エントリポイントアドレス:          0x100
+  プログラムの開始ヘッダ:            52 (バイト)
+  セクションヘッダ始点:              2800 (バイト)
+  フラグ:                            0x810000
+  このヘッダのサイズ:                52 (バイト)
+  プログラムヘッダサイズ:            32 (バイト)
+  プログラムヘッダ数:                2
+  セクションヘッダ:                  40 (バイト)
+  セクションヘッダサイズ:            10
+  セクションヘッダ文字列表索引:      9
+
+セクションヘッダ:
+  [番] 名前              タイプ          アドレス Off    サイズ ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .vectors          PROGBITS        00000000 000074 000100 00  WA  0   0  4
+  [ 2] .text             PROGBITS        00000100 000174 0002ac 00  AX  0   0  2
+  [ 3] .text.startup     PROGBITS        000003ac 000420 00007c 00  AX  0   0  2
+  [ 4] .rodata           PROGBITS        00000428 00049c 00002b 00   A  0   0  4
+  [ 5] .data             PROGBITS        00000454 0004c8 000002 00  WA  0   0  2
+  [ 6] .comment          PROGBITS        00000000 0004ca 000011 01  MS  0   0  1
+  [ 7] .symtab           SYMTAB          00000000 0004dc 000440 10      8  51  4
+  [ 8] .strtab           STRTAB          00000000 00091c 000183 00      0   0  1
+  [ 9] .shstrtab         STRTAB          00000000 000a9f 00004f 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  p (processor specific)
+
+このファイルにはセクショングループがありません。
+
+プログラムヘッダ:
+  タイプ       オフセット 仮想Addr   物理Addr   FileSiz MemSiz  Flg Align
+  LOAD           0x000074 0x00000000 0x00000000 0x00453 0x00453 RWE 0x1
+  LOAD           0x0004c8 0x00000454 0x00000454 0x00002 0x00002 RW  0x1
+
+ セグメントマッピングへのセクション:
+  セグメントセクション...
+   00     .vectors .text .text.startup .rodata 
+   01     .data 
+
+このファイルには動的セクションがありません。
+
+このファイルには再配置されるものがありません。
+
+The decoding of unwind sections for machine type Renesas H8/300 is not currently supported.
+
+シンボルテーブル '.symtab' は 68 個のエントリから構成されています:
+  番号:      値 サイズ タイプ  Bind   Vis      索引名
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     2: 00000100     0 SECTION LOCAL  DEFAULT    2 
+     3: 000003ac     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000428     0 SECTION LOCAL  DEFAULT    4 
+     5: 00000454     0 SECTION LOCAL  DEFAULT    5 
+     6: 00000000     0 SECTION LOCAL  DEFAULT    6 
+     7: 00000000     0 FILE    LOCAL  DEFAULT  ABS vector.c
+     8: 00000000     0 FILE    LOCAL  DEFAULT  ABS startup.o
+     9: 0000010a     0 NOTYPE  LOCAL  DEFAULT    2 .L1^B1
+    10: 00000000     0 FILE    LOCAL  DEFAULT  ABS main.c
+    11: 00000426     0 NOTYPE  LOCAL  DEFAULT    3 .L2
+    12: 00000000     0 FILE    LOCAL  DEFAULT  ABS lib.c
+    13: 00000120     0 NOTYPE  LOCAL  DEFAULT    2 .L2
+    14: 0000011c     0 NOTYPE  LOCAL  DEFAULT    2 .L3
+    15: 00000152     0 NOTYPE  LOCAL  DEFAULT    2 .L5
+    16: 00000144     0 NOTYPE  LOCAL  DEFAULT    2 .L6
+    17: 0000018a     0 NOTYPE  LOCAL  DEFAULT    2 .L8
+    18: 00000186     0 NOTYPE  LOCAL  DEFAULT    2 .L9
+    19: 00000196     0 NOTYPE  LOCAL  DEFAULT    2 .L12
+    20: 0000019a     0 NOTYPE  LOCAL  DEFAULT    2 .L7
+    21: 00000176     0 NOTYPE  LOCAL  DEFAULT    2 .L11
+    22: 000001b2     0 NOTYPE  LOCAL  DEFAULT    2 .L14
+    23: 000001ae     0 NOTYPE  LOCAL  DEFAULT    2 .L15
+    24: 000001d4     0 NOTYPE  LOCAL  DEFAULT    2 .L17
+    25: 000001c6     0 NOTYPE  LOCAL  DEFAULT    2 .L18
+    26: 000001f2     0 NOTYPE  LOCAL  DEFAULT    2 .L20
+    27: 000001ee     0 NOTYPE  LOCAL  DEFAULT    2 .L21
+    28: 00000208     0 NOTYPE  LOCAL  DEFAULT    2 .L25
+    29: 0000020c     0 NOTYPE  LOCAL  DEFAULT    2 .L19
+    30: 000001e2     0 NOTYPE  LOCAL  DEFAULT    2 .L23
+    31: 00000204     0 NOTYPE  LOCAL  DEFAULT    2 .L24
+    32: 00000232     0 NOTYPE  LOCAL  DEFAULT    2 .L27
+    33: 0000022c     0 NOTYPE  LOCAL  DEFAULT    2 .L28
+    34: 00000244     0 NOTYPE  LOCAL  DEFAULT    2 .L34
+    35: 00000256     0 NOTYPE  LOCAL  DEFAULT    2 .L26
+    36: 0000023c     0 NOTYPE  LOCAL  DEFAULT    2 .L30
+    37: 0000024a     0 NOTYPE  LOCAL  DEFAULT    2 .L31
+    38: 00000240     0 NOTYPE  LOCAL  DEFAULT    2 .L35
+    39: 0000021e     0 NOTYPE  LOCAL  DEFAULT    2 .L32
+    40: 00000254     0 NOTYPE  LOCAL  DEFAULT    2 .L33
+    41: 0000027a     0 NOTYPE  LOCAL  DEFAULT    2 .L37
+    42: 000002a2     0 NOTYPE  LOCAL  DEFAULT    2 .L39
+    43: 0000029c     0 NOTYPE  LOCAL  DEFAULT    2 .L40
+    44: 000002d4     0 NOTYPE  LOCAL  DEFAULT    2 .L42
+    45: 000002fe     0 NOTYPE  LOCAL  DEFAULT    2 .L43
+    46: 000002fc     0 NOTYPE  LOCAL  DEFAULT    2 .L44
+    47: 000002e2     0 NOTYPE  LOCAL  DEFAULT    2 .L45
+    48: 00000000     0 FILE    LOCAL  DEFAULT  ABS serial.c
+    49: 00000428    12 OBJECT  LOCAL  DEFAULT    4 _regs
+    50: 00000390     0 NOTYPE  LOCAL  DEFAULT    2 .L4
+    51: 000001da    56 NOTYPE  GLOBAL DEFAULT    2 _strcmp
+    52: 00000000   256 OBJECT  GLOBAL DEFAULT    1 _vectors
+    53: 00000260    46 NOTYPE  GLOBAL DEFAULT    2 _putc
+    54: 0000028e    36 NOTYPE  GLOBAL DEFAULT    2 _puts
+    55: 00000454     2 OBJECT  GLOBAL DEFAULT    5 _value
+    56: 00000356    36 NOTYPE  GLOBAL DEFAULT    2 _serial_is_send_enable
+    57: 00000132    54 NOTYPE  GLOBAL DEFAULT    2 _memcpy
+    58: 0000010c    38 NOTYPE  GLOBAL DEFAULT    2 _memset
+    59: 00000100     0 FUNC    GLOBAL DEFAULT    2 _start
+    60: 00000320    54 NOTYPE  GLOBAL DEFAULT    2 _serial_init
+    61: 000002b2   110 NOTYPE  GLOBAL DEFAULT    2 _putxval
+    62: 000001be    28 NOTYPE  GLOBAL DEFAULT    2 _strcpy
+    63: 00000168    60 NOTYPE  GLOBAL DEFAULT    2 _memcmp
+    64: 00000212    78 NOTYPE  GLOBAL DEFAULT    2 _strncmp
+    65: 000001a4    26 NOTYPE  GLOBAL DEFAULT    2 _strlen
+    66: 0000037a    50 NOTYPE  GLOBAL DEFAULT    2 _serial_send_byte
+    67: 000003ac   124 NOTYPE  GLOBAL DEFAULT    3 _main
+
+このファイルからはバージョン情報が見つかりません。
