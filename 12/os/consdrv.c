@@ -44,7 +44,7 @@ static void send_string(struct consreg *cons, char *str, int len)
   }
 }
 
-static void consdrv_intrproc(struct consreg *cons)
+static int consdrv_intrproc(struct consreg *cons)
 {
   unsigned char c;
   char *p;

@@ -6,4 +6,3 @@
 #define CONSDRV_CMD_WRITE  'w'
 
 #endif
-
