@@ -1,5 +1,5 @@
-#ifndef _INTERRUPUT_H_INCLUDED_
-#define _INTERRUPUT_H_INCLUDED_
+#ifndef _INTERRUPT_H_INCLUDED_
+#define _INTERRUPT_H_INCLUDED_
 
 extern char softvec;
 #define SOFTVEC_ADDR (&softvec)
