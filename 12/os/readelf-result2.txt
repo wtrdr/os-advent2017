@@ -1,0 +1,248 @@
+ELF ヘッダ:
+  マジック:  7f 45 4c 46 01 02 01 00 00 00 00 00 00 00 00 00 
+  クラス:                            ELF32
+  データ:                            2 の補数、ビッグエンディアン
+  バージョン:                        1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI バージョン:                    0
+  型:                                EXEC (実行可能ファイル)
+  マシン:                            Renesas H8/300
+  バージョン:                        0x1
+  エントリポイントアドレス:          0xffc020
+  プログラムの開始ヘッダ:            52 (バイト)
+  セクションヘッダ始点:              8564 (バイト)
+  フラグ:                            0x810000
+  このヘッダのサイズ:                52 (バイト)
+  プログラムヘッダサイズ:            32 (バイト)
+  プログラムヘッダ数:                2
+  セクションヘッダ:                  40 (バイト)
+  セクションヘッダサイズ:            10
+  セクションヘッダ文字列表索引:      9
+
+セクションヘッダ:
+  [番] 名前              タイプ          アドレス Off    サイズ ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .text             PROGBITS        00ffc020 000074 000f10 00  AX  0   0  2
+  [ 2] .text.startup     PROGBITS        00ffcf30 000f84 000048 00  AX  0   0  2
+  [ 3] .rodata           PROGBITS        00ffcf78 000fcc 0000a8 00   A  0   0  4
+  [ 4] .data             PROGBITS        00ffd020 001074 000020 00  WA  0   0  4
+  [ 5] .bss              NOBITS          00ffd040 001094 000210 00  WA  0   0  4
+  [ 6] .comment          PROGBITS        00000000 001094 000011 01  MS  0   0  1
+  [ 7] .symtab           SYMTAB          00000000 0010a8 000bb0 10      8 128  4
+  [ 8] .strtab           STRTAB          00000000 001c58 0004d1 00      0   0  1
+  [ 9] .shstrtab         STRTAB          00000000 002129 00004b 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  p (processor specific)
+
+このファイルにはセクショングループがありません。
+
+プログラムヘッダ:
+  タイプ       オフセット 仮想Addr   物理Addr   FileSiz MemSiz  Flg Align
+  LOAD           0x000000 0x00ffbfac 0x00ffbfac 0x01074 0x01074 R E 0x1
+  LOAD           0x001074 0x00ffd020 0x00ffd020 0x00020 0x00230 RW  0x1
+
+ セグメントマッピングへのセクション:
+  セグメントセクション...
+   00     .text .text.startup .rodata 
+   01     .data .bss 
+
+このファイルには動的セクションがありません。
+
+このファイルには再配置されるものがありません。
+
+The decoding of unwind sections for machine type Renesas H8/300 is not currently supported.
+
+シンボルテーブル '.symtab' は 187 個のエントリから構成されています:
+  番号:      値 サイズ タイプ  Bind   Vis      索引名
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00ffc020     0 SECTION LOCAL  DEFAULT    1 
+     2: 00ffcf30     0 SECTION LOCAL  DEFAULT    2 
+     3: 00ffcf78     0 SECTION LOCAL  DEFAULT    3 
+     4: 00ffd020     0 SECTION LOCAL  DEFAULT    4 
+     5: 00ffd040     0 SECTION LOCAL  DEFAULT    5 
+     6: 00000000     0 SECTION LOCAL  DEFAULT    6 
+     7: 00000000     0 FILE    LOCAL  DEFAULT  ABS startup.o
+     8: 00ffc02a     0 NOTYPE  LOCAL  DEFAULT    1 .L1^B1
+     9: 00000000     0 FILE    LOCAL  DEFAULT  ABS main.c
+    10: 00ffc04e    68 NOTYPE  LOCAL  DEFAULT    1 _start_threads
+    11: 00ffc08e     0 NOTYPE  LOCAL  DEFAULT    1 .L2
+    12: 00000000     0 FILE    LOCAL  DEFAULT  ABS interrupt.c
+    13: 00ffc124     0 NOTYPE  LOCAL  DEFAULT    1 .L3
+    14: 00000000     0 FILE    LOCAL  DEFAULT  ABS lib.c
+    15: 00ffc13e     0 NOTYPE  LOCAL  DEFAULT    1 .L2
+    16: 00ffc13a     0 NOTYPE  LOCAL  DEFAULT    1 .L3
+    17: 00ffc170     0 NOTYPE  LOCAL  DEFAULT    1 .L5
+    18: 00ffc162     0 NOTYPE  LOCAL  DEFAULT    1 .L6
+    19: 00ffc1a8     0 NOTYPE  LOCAL  DEFAULT    1 .L8
+    20: 00ffc1a4     0 NOTYPE  LOCAL  DEFAULT    1 .L9
+    21: 00ffc1b4     0 NOTYPE  LOCAL  DEFAULT    1 .L12
+    22: 00ffc1b8     0 NOTYPE  LOCAL  DEFAULT    1 .L7
+    23: 00ffc194     0 NOTYPE  LOCAL  DEFAULT    1 .L11
+    24: 00ffc1d0     0 NOTYPE  LOCAL  DEFAULT    1 .L14
+    25: 00ffc1cc     0 NOTYPE  LOCAL  DEFAULT    1 .L15
+    26: 00ffc1f2     0 NOTYPE  LOCAL  DEFAULT    1 .L17
+    27: 00ffc1e4     0 NOTYPE  LOCAL  DEFAULT    1 .L18
+    28: 00ffc210     0 NOTYPE  LOCAL  DEFAULT    1 .L20
+    29: 00ffc20c     0 NOTYPE  LOCAL  DEFAULT    1 .L21
+    30: 00ffc226     0 NOTYPE  LOCAL  DEFAULT    1 .L25
+    31: 00ffc22a     0 NOTYPE  LOCAL  DEFAULT    1 .L19
+    32: 00ffc200     0 NOTYPE  LOCAL  DEFAULT    1 .L23
+    33: 00ffc222     0 NOTYPE  LOCAL  DEFAULT    1 .L24
+    34: 00ffc250     0 NOTYPE  LOCAL  DEFAULT    1 .L27
+    35: 00ffc24a     0 NOTYPE  LOCAL  DEFAULT    1 .L28
+    36: 00ffc262     0 NOTYPE  LOCAL  DEFAULT    1 .L34
+    37: 00ffc274     0 NOTYPE  LOCAL  DEFAULT    1 .L26
+    38: 00ffc25a     0 NOTYPE  LOCAL  DEFAULT    1 .L30
+    39: 00ffc268     0 NOTYPE  LOCAL  DEFAULT    1 .L31
+    40: 00ffc25e     0 NOTYPE  LOCAL  DEFAULT    1 .L35
+    41: 00ffc23c     0 NOTYPE  LOCAL  DEFAULT    1 .L32
+    42: 00ffc272     0 NOTYPE  LOCAL  DEFAULT    1 .L33
+    43: 00ffc298     0 NOTYPE  LOCAL  DEFAULT    1 .L37
+    44: 00ffc2c6     0 NOTYPE  LOCAL  DEFAULT    1 .L39
+    45: 00ffc2ec     0 NOTYPE  LOCAL  DEFAULT    1 .L41
+    46: 00ffc2e6     0 NOTYPE  LOCAL  DEFAULT    1 .L42
+    47: 00ffc32a     0 NOTYPE  LOCAL  DEFAULT    1 .L44
+    48: 00ffc310     0 NOTYPE  LOCAL  DEFAULT    1 .L45
+    49: 00ffc364     0 NOTYPE  LOCAL  DEFAULT    1 .L48
+    50: 00ffc38e     0 NOTYPE  LOCAL  DEFAULT    1 .L49
+    51: 00ffc38c     0 NOTYPE  LOCAL  DEFAULT    1 .L50
+    52: 00ffc372     0 NOTYPE  LOCAL  DEFAULT    1 .L51
+    53: 00000000     0 FILE    LOCAL  DEFAULT  ABS serial.c
+    54: 00ffcf78    12 OBJECT  LOCAL  DEFAULT    3 _regs
+    55: 00ffc420     0 NOTYPE  LOCAL  DEFAULT    1 .L4
+    56: 00ffc476     0 NOTYPE  LOCAL  DEFAULT    1 .L8
+    57: 00000000     0 FILE    LOCAL  DEFAULT  ABS kozos.c
+    58: 00ffc578    94 NOTYPE  LOCAL  DEFAULT    1 _getcurrent
+    59: 00ffd1cc     4 OBJECT  LOCAL  DEFAULT    5 _current
+    60: 00ffd1d0   128 OBJECT  LOCAL  DEFAULT    5 _readyque
+    61: 00ffc5d6   128 NOTYPE  LOCAL  DEFAULT    1 _putcurrent
+    62: 00ffc656    56 NOTYPE  LOCAL  DEFAULT    1 _thread_exit
+    63: 00ffc68e    44 NOTYPE  LOCAL  DEFAULT    1 _softerr_intr
+    64: 00ffc6ba   396 NOTYPE  LOCAL  DEFAULT    1 _thread_run
+    65: 00ffd04c   384 OBJECT  LOCAL  DEFAULT    5 _threads
+    66: 00ffd020     4 OBJECT  LOCAL  DEFAULT    4 _thread_stack___1073
+    67: 00ffc956    16 NOTYPE  LOCAL  DEFAULT    1 _thread_end
+    68: 00ffc966    34 NOTYPE  LOCAL  DEFAULT    1 _thread_init
+    69: 00ffc846   272 NOTYPE  LOCAL  DEFAULT    1 _syscall_intr
+    70: 00ffd040    12 OBJECT  LOCAL  DEFAULT    5 _handlers
+    71: 00ffca80    94 NOTYPE  LOCAL  DEFAULT    1 _thread_intr
+    72: 00ffc5c6     0 NOTYPE  LOCAL  DEFAULT    1 .L4
+    73: 00ffc5cc     0 NOTYPE  LOCAL  DEFAULT    1 .L5
+    74: 00ffc5b4     0 NOTYPE  LOCAL  DEFAULT    1 .L3
+    75: 00ffc5d0     0 NOTYPE  LOCAL  DEFAULT    1 .L1
+    76: 00ffc63e     0 NOTYPE  LOCAL  DEFAULT    1 .L10
+    77: 00ffc644     0 NOTYPE  LOCAL  DEFAULT    1 .L11
+    78: 00ffc61c     0 NOTYPE  LOCAL  DEFAULT    1 .L8
+    79: 00ffc620     0 NOTYPE  LOCAL  DEFAULT    1 .L9
+    80: 00ffc648     0 NOTYPE  LOCAL  DEFAULT    1 .L6
+    81: 00ffc76e     0 NOTYPE  LOCAL  DEFAULT    1 .L15
+    82: 00ffc6e2     0 NOTYPE  LOCAL  DEFAULT    1 .L16
+    83: 00ffc830     0 NOTYPE  LOCAL  DEFAULT    1 .L14
+    84: 00ffc744     0 NOTYPE  LOCAL  DEFAULT    1 .Llt4
+    85: 00ffc77a     0 NOTYPE  LOCAL  DEFAULT    1 .Llt5
+    86: 00ffc70a     0 NOTYPE  LOCAL  DEFAULT    1 .L18
+    87: 00ffc706     0 NOTYPE  LOCAL  DEFAULT    1 .L21
+    88: 00ffc946     0 NOTYPE  LOCAL  DEFAULT    1 .L22
+    89: 00ffcf84     0 NOTYPE  LOCAL  DEFAULT    3 .L25
+    90: 00ffc93c     0 NOTYPE  LOCAL  DEFAULT    1 .L35
+    91: 00ffc916     0 NOTYPE  LOCAL  DEFAULT    1 .L34
+    92: 00ffca7e     0 NOTYPE  LOCAL  DEFAULT    1 .L40
+    93: 00ffcaa8     0 NOTYPE  LOCAL  DEFAULT    1 .L42
+    94: 00ffcac6     0 NOTYPE  LOCAL  DEFAULT    1 .L43
+    95: 00ffcab2     0 NOTYPE  LOCAL  DEFAULT    1 .L44
+    96: 00ffc892     0 NOTYPE  LOCAL  DEFAULT    1 .L24
+    97: 00ffc8d0     0 NOTYPE  LOCAL  DEFAULT    1 .L26
+    98: 00ffc8d6     0 NOTYPE  LOCAL  DEFAULT    1 .L27
+    99: 00ffc8da     0 NOTYPE  LOCAL  DEFAULT    1 .L28
+   100: 00ffc8e0     0 NOTYPE  LOCAL  DEFAULT    1 .L29
+   101: 00ffc8f2     0 NOTYPE  LOCAL  DEFAULT    1 .L30
+   102: 00ffc908     0 NOTYPE  LOCAL  DEFAULT    1 .L31
+   103: 00ffc920     0 NOTYPE  LOCAL  DEFAULT    1 .L32
+   104: 00ffc934     0 NOTYPE  LOCAL  DEFAULT    1 .L33
+   105: 00000000     0 FILE    LOCAL  DEFAULT  ABS syscall.c
+   106: 00000000     0 FILE    LOCAL  DEFAULT  ABS memory.c
+   107: 00ffd028    24 OBJECT  LOCAL  DEFAULT    4 _pool
+   108: 00ffd024     4 OBJECT  LOCAL  DEFAULT    4 _area___1023
+   109: 00ffcd44     0 NOTYPE  LOCAL  DEFAULT    1 .L2
+   110: 00ffcd32     0 NOTYPE  LOCAL  DEFAULT    1 .L3
+   111: 00ffccee     0 NOTYPE  LOCAL  DEFAULT    1 .L4
+   112: 00ffccda     0 NOTYPE  LOCAL  DEFAULT    1 .L5
+   113: 00ffcda2     0 NOTYPE  LOCAL  DEFAULT    1 .L11
+   114: 00ffcda6     0 NOTYPE  LOCAL  DEFAULT    1 .L12
+   115: 00ffcdbc     0 NOTYPE  LOCAL  DEFAULT    1 .L8
+   116: 00ffcdaa     0 NOTYPE  LOCAL  DEFAULT    1 .L7
+   117: 00ffcdc4     0 NOTYPE  LOCAL  DEFAULT    1 .L9
+   118: 00ffcdd6     0 NOTYPE  LOCAL  DEFAULT    1 .L6
+   119: 00ffce12     0 NOTYPE  LOCAL  DEFAULT    1 .L16
+   120: 00ffce16     0 NOTYPE  LOCAL  DEFAULT    1 .L17
+   121: 00ffce1c     0 NOTYPE  LOCAL  DEFAULT    1 .L18
+   122: 00ffce3e     0 NOTYPE  LOCAL  DEFAULT    1 .L13
+   123: 00ffce20     0 NOTYPE  LOCAL  DEFAULT    1 .L14
+   124: 00000000     0 FILE    LOCAL  DEFAULT  ABS test10_1.c
+   125: 00ffce92     0 NOTYPE  LOCAL  DEFAULT    1 .L2
+   126: 00ffce86     0 NOTYPE  LOCAL  DEFAULT    1 .L3
+   127: 00ffce66     0 NOTYPE  LOCAL  DEFAULT    1 .L4
+   128: 00ffc988   230 NOTYPE  GLOBAL DEFAULT    1 _kz_start
+   129: 00ffc506    38 NOTYPE  GLOBAL DEFAULT    1 _serial_intr_is_recv_enab
+   130: 00ffc492    40 NOTYPE  GLOBAL DEFAULT    1 _serial_intr_is_send_enab
+   131: 00ffc1f8    56 NOTYPE  GLOBAL DEFAULT    1 _strcmp
+   132: 00ffcc86    50 NOTYPE  GLOBAL DEFAULT    1 _kz_kmfree
+   133: 00ffcade    32 NOTYPE  GLOBAL DEFAULT    1 _kz_syscall
+   134: 00ffc27e    46 NOTYPE  GLOBAL DEFAULT    1 _putc
+   135: 00ffcf30     0 NOTYPE  GLOBAL DEFAULT    1 _etext
+   136: 00ffc2ac    44 NOTYPE  GLOBAL DEFAULT    1 _getc
+   137: 00ffcb56    22 NOTYPE  GLOBAL DEFAULT    1 _kz_exit
+   138: 00ffc2d8    36 NOTYPE  GLOBAL DEFAULT    1 _puts
+   139: 00ffbf20     0 NOTYPE  GLOBAL DEFAULT    1 _softvec
+   140: 00ffce48   232 NOTYPE  GLOBAL DEFAULT    1 _test10_1_main
+   141: 00ffc02c     0 NOTYPE  GLOBAL DEFAULT    1 _dispatch
+   142: 00ffd040     0 NOTYPE  GLOBAL DEFAULT    5 _bss_start
+   143: 00ffc020     0 NOTYPE  GLOBAL DEFAULT    1 _text_start
+   144: 00ffc3e6    36 NOTYPE  GLOBAL DEFAULT    1 _serial_is_send_enable
+   145: 00ffc4ba    38 NOTYPE  GLOBAL DEFAULT    1 _serial_intr_send_enable
+   146: 00ffd250     0 NOTYPE  GLOBAL DEFAULT    6 _freearea
+   147: 00ffc460    50 NOTYPE  GLOBAL DEFAULT    1 _serial_recv_byte
+   148: 00ffc2fc    70 NOTYPE  GLOBAL DEFAULT    1 _gets
+   149: 00ffd250     0 NOTYPE  GLOBAL DEFAULT    5 _ebss
+   150: 00ffcbf6    46 NOTYPE  GLOBAL DEFAULT    1 _kz_getid
+   151: 00ffc092    88 NOTYPE  GLOBAL DEFAULT    1 _softvec_init
+   152: 00ffc150    54 NOTYPE  GLOBAL DEFAULT    1 _memcpy
+   153: 00ffc12a    38 NOTYPE  GLOBAL DEFAULT    1 _memset
+   154: 00ffcb6c    44 NOTYPE  GLOBAL DEFAULT    1 _kz_wait
+   155: 00ffff00     0 NOTYPE  GLOBAL DEFAULT    6 _bootstack
+   156: 00ffc52c    38 NOTYPE  GLOBAL DEFAULT    1 _serial_intr_recv_enable
+   157: 00ffcc24    48 NOTYPE  GLOBAL DEFAULT    1 _kz_chpri
+   158: 00ffc020     0 NOTYPE  GLOBAL DEFAULT    1 _start
+   159: 00ffd020     0 NOTYPE  GLOBAL DEFAULT    4 _data_start
+   160: 00ffc552    38 NOTYPE  GLOBAL DEFAULT    1 _serial_intr_recv_disable
+   161: 00ffcbc4    50 NOTYPE  GLOBAL DEFAULT    1 _kz_wakeup
+   162: 00ffc3b0    54 NOTYPE  GLOBAL DEFAULT    1 _serial_init
+   163: 00ffff00     0 NOTYPE  GLOBAL DEFAULT    6 _intrstack
+   164: 00ffc4e0    38 NOTYPE  GLOBAL DEFAULT    1 _serial_intr_send_disable
+   165: 00ffc342   110 NOTYPE  GLOBAL DEFAULT    1 _putxval
+   166: 00ffc1dc    28 NOTYPE  GLOBAL DEFAULT    1 _strcpy
+   167: 00ffc186    60 NOTYPE  GLOBAL DEFAULT    1 _memcmp
+   168: 00fff400     0 NOTYPE  GLOBAL DEFAULT    6 _userstack
+   169: 00ffc108    34 NOTYPE  GLOBAL DEFAULT    1 _interrupt
+   170: 00ffc230    78 NOTYPE  GLOBAL DEFAULT    1 _strncmp
+   171: 00ffcc54    50 NOTYPE  GLOBAL DEFAULT    1 _kz_kmalloc
+   172: 00ffcf78     0 NOTYPE  GLOBAL DEFAULT    3 _rodata_start
+   173: 00ffd040     0 NOTYPE  GLOBAL DEFAULT    4 _edata
+   174: 00ffcafe    88 NOTYPE  GLOBAL DEFAULT    1 _kz_run
+   175: 00ffcd60   124 NOTYPE  GLOBAL DEFAULT    1 _kzmem_alloc
+   176: 00ffd250     0 NOTYPE  GLOBAL DEFAULT    5 _end
+   177: 00ffc43c    36 NOTYPE  GLOBAL DEFAULT    1 _serial_is_recv_enable
+   178: 00ffc0ea    30 NOTYPE  GLOBAL DEFAULT    1 _softvec_setintr
+   179: 00ffc1c2    26 NOTYPE  GLOBAL DEFAULT    1 _strlen
+   180: 00ffc40a    50 NOTYPE  GLOBAL DEFAULT    1 _serial_send_byte
+   181: 00ffccb8   168 NOTYPE  GLOBAL DEFAULT    1 _kzmem_init
+   182: 00ffca6e    18 NOTYPE  GLOBAL DEFAULT    1 _kz_sysdown
+   183: 00ffcb98    44 NOTYPE  GLOBAL DEFAULT    1 _kz_sleep
+   184: 00ffcf30    72 NOTYPE  GLOBAL DEFAULT    2 _main
+   185: 00ffcddc   108 NOTYPE  GLOBAL DEFAULT    1 _kzmem_free
+   186: 00ffd020     0 NOTYPE  GLOBAL DEFAULT    3 _erodata
+
+このファイルからはバージョン情報が見つかりません。

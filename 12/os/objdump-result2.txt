@@ -1,0 +1,247 @@
+
+kozos.o:     file format elf32-h8300
+
+
+Disassembly of section .text:
+
+00000000 <_getcurrent>:
+   0:	01 00 6d f6 	mov.l	er6,@-er7
+   4:	0f f6       	mov.l	er7,er6
+   6:	01 00 6b 22 	mov.l	@0x0:32,er2
+   a:	00 00 00 00 
+   e:	47 00       	beq	.0 (0x10)
+  10:	01 00 69 23 	mov.l	@er2,er3
+  14:	01 00 6b a3 	mov.l	er3,@0x0:32
+  18:	00 00 00 00 
+  1c:	46 00       	bne	.0 (0x1e)
+  1e:	01 00 6b a3 	mov.l	er3,@0x0:32
+  22:	00 00 00 00 
+
+00000026 <.L3>:
+  26:	1a b3       	sub.l	er3,er3
+  28:	01 00 69 a3 	mov.l	er3,@er2
+  2c:	19 00       	sub.w	r0,r0
+  2e:	40 00       	bra	.0 (0x30)
+
+00000030 <.L4>:
+  30:	79 00 ff ff 	mov.w	#0xffff,r0
+
+00000034 <.L1>:
+  34:	01 00 6d 76 	mov.l	@er7+,er6
+  38:	54 70       	rts	
+
+0000003a <_thread_exit>:
+  3a:	01 00 6d f6 	mov.l	er6,@-er7
+  3e:	0f f6       	mov.l	er7,er6
+  40:	01 00 6b 20 	mov.l	@0x0:32,er0
+  44:	00 00 00 00 
+  48:	0b 90       	adds	#4,er0
+  4a:	5e 00 00 00 	jsr	@0x0:24
+  4e:	7a 00 00 00 	mov.l	#0x0,er0
+  52:	00 00 
+  54:	5e 00 00 00 	jsr	@0x0:24
+  58:	1a a2       	sub.l	er2,er2
+  5a:	8a 30       	add.b	#0x30,r2l
+  5c:	19 11       	sub.w	r1,r1
+  5e:	01 00 6b 20 	mov.l	@0x0:32,er0
+  62:	00 00 00 00 
+  66:	5e 00 00 00 	jsr	@0x0:24
+  6a:	19 00       	sub.w	r0,r0
+  6c:	01 00 6d 76 	mov.l	@er7+,er6
+  70:	54 70       	rts	
+
+00000072 <_softerr_intr>:
+  72:	01 00 6d f6 	mov.l	er6,@-er7
+  76:	0f f6       	mov.l	er7,er6
+  78:	01 00 6b 20 	mov.l	@0x0:32,er0
+  7c:	00 00 00 00 
+  80:	0b 90       	adds	#4,er0
+  82:	5e 00 00 00 	jsr	@0x0:24
+  86:	7a 00 00 00 	mov.l	#0x0,er0
+  8a:	00 00 
+  8c:	5e 00 00 00 	jsr	@0x0:24
+  90:	5e 00 00 00 	jsr	@0x0:24
+  94:	5e 00 00 00 	jsr	@0x0:24
+  98:	01 00 6d 76 	mov.l	@er7+,er6
+  9c:	54 70       	rts	
+
+0000009e <_thread_run.isra___0>:
+  9e:	01 00 6d f6 	mov.l	er6,@-er7
+  a2:	0f f6       	mov.l	er7,er6
+  a4:	01 00 6d f4 	mov.l	er4,@-er7
+  a8:	01 00 6d f5 	mov.l	er5,@-er7
+  ac:	1a a2       	sub.l	er2,er2
+  ae:	19 44       	sub.w	r4,r4
+
+000000b0 <.L9>:
+  b0:	01 00 78 20 	mov.l	@(0x0:32,er2),er5
+  b4:	6b 25 00 00 
+  b8:	00 00 
+  ba:	47 00       	beq	.0 (0xbc)
+  bc:	0b 04       	adds	#1,er4
+  be:	7a 12 00 00 	add.l	#0x30,er2
+  c2:	00 30 
+  c4:	79 24 00 06 	cmp.w	#0x6,r4
+  c8:	46 00       	bne	.0 (0xca)
+  ca:	1a 80       	sub.l	er0,er0
+  cc:	1b 00       	subs	#1,er0
+  ce:	40 00       	bra	.0 (0xd0)
+
+000000d0 <.L8>:
+  d0:	0f 81       	mov.l	er0,er1
+  d2:	0f a0       	mov.l	er2,er0
+  d4:	7a 10 00 00 	add.l	#0x0,er0
+  d8:	00 00 
+  da:	5e 00 00 00 	jsr	@0x0:24
+  de:	1a 91       	sub.l	er1,er1
+  e0:	89 30       	add.b	#0x30,r1l
+  e2:	0d 40       	mov.w	r4,r0
+  e4:	17 f0       	exts.l	er0
+  e6:	5e 00 00 00 	jsr	@0x0:24
+  ea:	01 00 78 80 	mov.l	er5,@(0x0:32,er0)
+  ee:	6b a5 00 00 
+  f2:	00 00 
+
+000000f4 <.L7>:
+  f4:	01 00 6d 75 	mov.l	@er7+,er5
+  f8:	01 00 6d 74 	mov.l	@er7+,er4
+  fc:	01 00 6d 76 	mov.l	@er7+,er6
+ 100:	54 70       	rts	
+
+00000102 <_syscall_init>:
+ 102:	01 00 6d f6 	mov.l	er6,@-er7
+ 106:	0f f6       	mov.l	er7,er6
+ 108:	01 00 6d f4 	mov.l	er4,@-er7
+ 10c:	01 00 6d f5 	mov.l	er5,@-er7
+ 110:	01 00 6b 22 	mov.l	@0x0:32,er2
+ 114:	00 00 00 00 
+ 118:	01 00 6f 24 	mov.l	@(0x28:16,er2),er4
+ 11c:	00 28 
+ 11e:	6f 25 00 24 	mov.w	@(0x24:16,er2),r5
+ 122:	5e 00 00 00 	jsr	@0x0:24
+ 126:	0d 55       	mov.w	r5,r5
+ 128:	47 00       	beq	.0 (0x12a)
+ 12a:	1b 55       	dec.w	#1,r5
+ 12c:	47 00       	beq	.0 (0x12e)
+ 12e:	40 00       	bra	.0 (0x130)
+
+00000130 <.L13>:
+ 130:	01 00 6f 40 	mov.l	@(0x4:16,er4),er0
+ 134:	00 04 
+ 136:	5e 00 00 00 	jsr	@0x0:24
+ 13a:	01 00 6f c0 	mov.l	er0,@(0x10:16,er4)
+ 13e:	00 10 
+ 140:	40 00       	bra	.0 (0x142)
+
+00000142 <.L14>:
+ 142:	5e 00 00 00 	jsr	@0x0:24
+
+00000146 <.L11>:
+ 146:	01 00 6d 75 	mov.l	@er7+,er5
+ 14a:	01 00 6d 74 	mov.l	@er7+,er4
+ 14e:	01 00 6d 76 	mov.l	@er7+,er6
+ 152:	54 70       	rts	
+
+00000154 <_kz_start>:
+ 154:	01 00 6d f6 	mov.l	er6,@-er7
+ 158:	0f f6       	mov.l	er7,er6
+ 15a:	01 00 6d f4 	mov.l	er4,@-er7
+ 15e:	0f 94       	mov.l	er1,er4
+ 160:	1a a2       	sub.l	er2,er2
+ 162:	01 00 6b a2 	mov.l	er2,@0x0:32
+ 166:	00 00 00 00 
+ 16a:	01 00 6b a2 	mov.l	er2,@0x0:32
+ 16e:	00 00 00 00 
+ 172:	01 00 6b a2 	mov.l	er2,@0x0:32
+ 176:	00 00 00 00 
+ 17a:	7a 02 00 00 	mov.l	#0x120,er2
+ 17e:	01 20 
+ 180:	19 11       	sub.w	r1,r1
+ 182:	7a 00 00 00 	mov.l	#0x0,er0
+ 186:	00 00 
+ 188:	5e 00 00 00 	jsr	@0x0:24
+ 18c:	1a a2       	sub.l	er2,er2
+ 18e:	8a 0c       	add.b	#0xc,r2l
+ 190:	19 11       	sub.w	r1,r1
+ 192:	7a 00 00 00 	mov.l	#0x0,er0
+ 196:	00 00 
+ 198:	5e 00 00 00 	jsr	@0x0:24
+ 19c:	7a 01 00 00 	mov.l	#0x0,er1
+ 1a0:	00 00 
+ 1a2:	79 00 00 01 	mov.w	#0x1,r0
+ 1a6:	5e 00 00 00 	jsr	@0x0:24
+ 1aa:	7a 02 00 00 	mov.l	#0x0,er2
+ 1ae:	00 00 
+ 1b0:	01 00 6b a2 	mov.l	er2,@0x0:32
+ 1b4:	00 00 00 00 
+ 1b8:	7a 01 00 00 	mov.l	#0x0,er1
+ 1bc:	00 00 
+ 1be:	19 00       	sub.w	r0,r0
+ 1c0:	5e 00 00 00 	jsr	@0x0:24
+ 1c4:	7a 02 00 00 	mov.l	#0x0,er2
+ 1c8:	00 00 
+ 1ca:	01 00 6b a2 	mov.l	er2,@0x0:32
+ 1ce:	00 00 00 00 
+ 1d2:	0f c0       	mov.l	er4,er0
+ 1d4:	5e 00 00 00 	jsr	@0x0:24
+ 1d8:	01 00 6b a0 	mov.l	er0,@0x0:32
+ 1dc:	00 00 00 00 
+ 1e0:	7a 10 00 00 	add.l	#0x2c,er0
+ 1e4:	00 2c 
+ 1e6:	5e 00 00 00 	jsr	@0x0:24
+ 1ea:	01 00 6d 74 	mov.l	@er7+,er4
+ 1ee:	01 00 6d 76 	mov.l	@er7+,er6
+ 1f2:	54 70       	rts	
+
+000001f4 <_kz_sysdown>:
+ 1f4:	01 00 6d f6 	mov.l	er6,@-er7
+ 1f8:	0f f6       	mov.l	er7,er6
+ 1fa:	7a 00 00 00 	mov.l	#0x0,er0
+ 1fe:	00 00 
+ 200:	5e 00 00 00 	jsr	@0x0:24
+
+00000204 <.L17>:
+ 204:	40 00       	bra	.0 (0x206)
+
+00000206 <_thread_intr>:
+ 206:	01 00 6d f6 	mov.l	er6,@-er7
+ 20a:	0f f6       	mov.l	er7,er6
+ 20c:	01 00 6b 22 	mov.l	@0x0:32,er2
+ 210:	00 00 00 00 
+ 214:	01 00 6f a1 	mov.l	er1,@(0x2c:16,er2)
+ 218:	00 2c 
+ 21a:	17 f0       	exts.l	er0
+ 21c:	10 30       	shll.l	er0
+ 21e:	10 30       	shll.l	er0
+ 220:	01 00 78 00 	mov.l	@(0x0:32,er0),er2
+ 224:	6b 22 00 00 
+ 228:	00 00 
+ 22a:	47 00       	beq	.0 (0x22c)
+ 22c:	5d 20       	jsr	@er2
+
+0000022e <.L19>:
+ 22e:	01 00 6b 20 	mov.l	@0x0:32,er0
+ 232:	00 00 00 00 
+ 236:	46 00       	bne	.0 (0x238)
+ 238:	5e 00 00 00 	jsr	@0x0:24
+
+0000023c <.L20>:
+ 23c:	01 00 6b a0 	mov.l	er0,@0x0:32
+ 240:	00 00 00 00 
+ 244:	7a 10 00 00 	add.l	#0x2c,er0
+ 248:	00 2c 
+ 24a:	5e 00 00 00 	jsr	@0x0:24
+ 24e:	01 00 6d 76 	mov.l	@er7+,er6
+ 252:	54 70       	rts	
+
+00000254 <_kz_syscall>:
+ 254:	01 00 6d f6 	mov.l	er6,@-er7
+ 258:	0f f6       	mov.l	er7,er6
+ 25a:	01 00 6b 22 	mov.l	@0x0:32,er2
+ 25e:	00 00 00 00 
+ 262:	6f a0 00 24 	mov.w	r0,@(0x24:16,er2)
+ 266:	01 00 6f a1 	mov.l	er1,@(0x28:16,er2)
+ 26a:	00 28 
+ 26c:	57 00       	trapa	#0x0
+ 26e:	01 00 6d 76 	mov.l	@er7+,er6
+ 272:	54 70       	rts	
